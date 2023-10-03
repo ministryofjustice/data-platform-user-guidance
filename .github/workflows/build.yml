@@ -1,0 +1,32 @@
+---
+name: Build
+
+on: # yamllint disable-line rule:truthy
+  pull_request:
+    branches:
+      - main
+
+permissions: read-all
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        id: checkout
+        uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v4.0.0
+
+      - name: Setup Node.js
+        id: setup_node
+        uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d # v3.8.1
+        with:
+          node-version: lts/hydrogen
+
+      - name: Install dependencies
+        id: install_dependencies
+        run: npm install
+
+      - name: Build
+        id: build
+        run: npx eleventy
