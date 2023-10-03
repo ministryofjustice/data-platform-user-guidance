@@ -5,27 +5,19 @@ on: # yamllint disable-line rule:truthy
   pull_request:
     branches:
       - main
-# Commenting while we test
-#   push:
-#     branches:
-#       - main
 
 permissions: read-all
-
-# concurrency:
-#   group: pages
-#   cancel-in-progress: true
 
 jobs:
   publish:
     name: Publish
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deploy_github_pages.outputs.url }}
     permissions:
       id-token: write
       packages: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy_github_pages.outputs.url }}
     steps:
       - name: Checkout
         id: checkout
