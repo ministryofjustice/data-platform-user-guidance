@@ -4,6 +4,7 @@ const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 module.exports = function(eleventyConfig) {
   // Set custom variable to decide the path prefix as it is used in a couple of places.
   const _customPathPrefix = process.env.PATH_PREFIX ?? '';
+  eleventyConfig.addPassthroughCopy({ 'docs/images': 'images' });
   // Register the plugin
   eleventyConfig.addPlugin(govukEleventyPlugin, {
     fontFamily: 'roboto, system-ui, sans-serif',
@@ -39,7 +40,6 @@ module.exports = function(eleventyConfig) {
   },
         stylesheets: ['/styles/base.css'],
   });
-
 // Used for tag page generation
 eleventyConfig.addFilter("getAllTags", collection => {
   let tagSet = new Set();
@@ -87,7 +87,6 @@ eleventyConfig.addGlobalData("phaseBannerConfiguration", () => {
 });
 
 eleventyConfig.addGlobalData('pathPrefix', _customPathPrefix);
-  eleventyConfig.addPassthroughCopy({ './assets': './images' })
   return {
     dataTemplateEngine: 'njk',
     htmlTemplateEngine: 'njk',
