@@ -87,7 +87,7 @@ eleventyConfig.addGlobalData("phaseBannerConfiguration", () => {
 });
 
 eleventyConfig.addGlobalData('pathPrefix', _customPathPrefix);
-
+  eleventyConfig.addPassthroughCopy({ './assets': './images' })
   return {
     dataTemplateEngine: 'njk',
     htmlTemplateEngine: 'njk',

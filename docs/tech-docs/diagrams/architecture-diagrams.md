@@ -20,19 +20,19 @@ In the [C4 model](https://c4model.com/), the four C's represent [context](https:
 
 This is the highest level of abstraction and provides an overview of the entire system. It shows the system under consideration and its external dependencies, such as users, external systems, and APIs. Frequency in change is likely minimal compared to other levels.
 
-![Level 1 Diagram](c4-model-level1.excalidraw.png)
+![Level 1 Diagram](/images/tech-docs/diagrams/c4-model-level1.excalidraw.png)
 
 ### Level 2 - Minimum Viable Product Diagram
 
 This diagram shows the components that we are going to deploy as part of our minimum viable product. [MVPs](https://defradigital.blog.gov.uk/2018/03/14/how-showing-the-thing-helped-us-simplify-our-mvp/) play a vital role in service development. By aiming to release our product as early as possible, we reduce the risk of never releasing it at all. We also get valuable feedback from our users who are using the system in a real-world situation.
 
-![Level 2 Diagram MVP](c4-model-level2-mvp.excalidraw.png)
+![Level 2 Diagram MVP](/images/tech-docs/diagrams/c4-model-level2-mvp.excalidraw.png)
 
 ### Level 2 - Container Diagram
 
 This level focuses on the software system's high-level [containers](https://c4model.com/#ContainerDiagram), which are typically applications or services. It illustrates the major components of the system and their interactions. Web servers, databases, desktop and mobile applications are all examples of containers.
 
-![Level 2 Diagram](c4-model-level2.excalidraw.png)
+![Level 2 Diagram](/images/tech-docs/diagrams/c4-model-level2.excalidraw.png)
 
 ### Level 3 - Component
 
@@ -42,7 +42,7 @@ This level delves deeper into the containers identified in the previous level. I
 
 This diagram shows the relationships of a Data Product with other components of the Data Platform.
 
-![Level 3 Diagram](c4-model-level3-data-product.excalidraw.png)
+![Level 3 Diagram](/images/tech-docs/diagrams/c4-model-level3-data-product.excalidraw.png)
 
 ## Contributing and updating
 
