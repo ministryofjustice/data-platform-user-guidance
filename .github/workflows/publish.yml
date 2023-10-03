@@ -1,0 +1,55 @@
+---
+name: Publish
+
+on: # yamllint disable-line rule:truthy
+  push:
+    branches:
+      - main
+
+permissions: read-all
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    name: Publish
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      pages: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy_github_pages.outputs.url }}
+    steps:
+      - name: Checkout
+        id: checkout
+        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4.1.0
+
+      - name: Configure GitHub Pages
+        id: configure_github_pages
+        uses: actions/configure-pages@f156874f8191504dae5b037505266ed5dda6c382 # v3.0.6
+
+      - name: Setup Node.js
+        id: setup_node
+        uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d # v3.8.1
+        with:
+          node-version: lts/hydrogen
+
+      - name: Install dependencies
+        id: install_dependencies
+        run: npm install
+
+      - name: Build
+        id: build
+        run: npx eleventy
+
+      - name: Upload Pages Artifact
+        id: upload_pages_artifact
+        uses: actions/upload-pages-artifact@a753861a5debcf57bf8b404356158c8e1e33150c # v2.0.0
+        with:
+          path: _site
+
+      - name: Deploy GitHub Pages
+        id: deploy_github_pages
+        uses: actions/deploy-pages@9dbe3824824f8a1377b8e298bafde1a50ede43e5 # v2.0.4
