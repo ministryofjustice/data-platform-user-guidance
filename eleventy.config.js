@@ -32,7 +32,7 @@ module.exports = function(eleventyConfig) {
               text: 'Cookies'
           },
           {
-              href: 'https://github.com/ministryofjustice/data-platform',
+              href: 'https://github.com/ministryofjustice/data-platform-user-guidance',
               text: 'GitHub'
           }
         ]
