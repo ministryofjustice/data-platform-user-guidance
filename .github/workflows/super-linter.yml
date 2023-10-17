@@ -28,7 +28,7 @@ jobs:
 
       - name: Super-Linter
         id: super_linter
-        uses: super-linter/super-linter@ebfd5d216a35d953943b5a81dad7d808bb9f926b # v5.3.1
+        uses: super-linter/super-linter@02a6f323ba3f02b0362fee516bfd36cb1cdb9c07 # v5.4.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEFAULT_BRANCH: main
