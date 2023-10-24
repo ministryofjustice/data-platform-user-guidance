@@ -1,17 +1,22 @@
 ---
-eleventyExcludeFromCollections: true
-includeInBreadcrumbs: true
+eleventyExcludeFromCollections: false
+eleventyNavigation:
+  key: About
+  order: 1
 layout: page
 title: About
+includeInBreadcrumbs: true
+description: An overview of the Data Platform
+tags: []
 ---
 
 >**Our vision is to connect the right people, systems, and data to support our [Digital](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1064860/moj-digital-strategy-2025.pdf) and [Data](https://intranet.justice.gov.uk/documents/2022/08/moj-data-strategy.pdf/) strategies.**
 
-## What is the Data Platform?
-
 The Data Platform is a data analysis platform currently in development at the Ministry of Justice, within the [Platforms & Architecture team](https://peoplefinder.service.gov.uk/teams/platforms-architecture-data-platform).
 
 It will either integrate or replace the functionality of the [Analytical Platform](https://user-guidance.analytical-platform.service.justice.gov.uk/). We would find a suitable place for Analytical Platform users to migrate before making this decision.
+
+We host the Data Platform's repository on [GitHub](https://github.com/ministryofjustice/data-platform).
 
 ## Reasons and benefits
 
@@ -54,4 +59,4 @@ Taking a user-centred design approach, we are currently conducting user research
 
 The insights we gather influence the Data Platform's requirements and design. This is to ensure we build a platform that meets the needs of its intended users.
 
-We plan to communicate updates about the Data Platform's development through our blog. If you have any questions, see the Contact page for ways to get in touch with us.
+We communicate updates about the Data Platform's development through our blog. If you have any questions, you can contact us on Slack using the **#ask-data-platform** channel in the [Ministry of Justice UK workspace](https://moj.enterprise.slack.com/), or if you do not have access to Slack, on [GitHub discussions](https://github.com/ministryofjustice/data-platform/discussions/categories/q-a).

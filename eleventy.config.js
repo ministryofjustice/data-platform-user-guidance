@@ -23,10 +23,6 @@ module.exports = function (eleventyConfig) {
       meta: {
         items: [
           {
-            href: _customPathPrefix + '/about/',
-            text: 'About'
-          },
-          {
             href: _customPathPrefix + '/cookies/',
             text: 'Cookies'
           },
@@ -55,24 +51,15 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addCollection('homepageLinks', function (collectionApi) {
     return collectionApi.getFilteredByGlob([
-      '**/analytical-platform.md',
-      '**/blog.md',
-      '**/data-platform.md',
-      '**/support.md',
-      '**/tech-docs.md']).sort(function (a, b) {
+      '**/about.md',
+      '**/blog.md']).sort(function (a, b) {
       return a.data.title.localeCompare(b.data.title) // sort by title ascending
     })
   })
 
-  eleventyConfig.addCollection('getAllADRsOrderedByTitle', function (collectionApi) {
-    return collectionApi.getFilteredByGlob('**/tech-docs/ADRs/*.md').sort(function (a, b) {
-      return a.data.title.localeCompare(b.data.title) // sort by title ascending
-    })
-  })
-
-  eleventyConfig.addCollection('getAllBlogsOrderedByTitle', function (collectionApi) {
+  eleventyConfig.addCollection('getAllBlogsOrderedByDate', function (collectionApi) {
     return collectionApi.getFilteredByGlob('**/blog/*.md').sort(function (a, b) {
-      return a.data.title.localeCompare(b.data.title) // sort by title ascending
+      return a.data.title.localeCompare(b.data.date) // sort by date descending
     })
   })
 
