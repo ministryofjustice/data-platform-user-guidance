@@ -22,13 +22,13 @@ jobs:
     steps:
       - name: Checkout
         id: checkout
-        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4.1.0
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
         with:
           fetch-depth: 0
 
       - name: Super-Linter
         id: super_linter
-        uses: super-linter/super-linter@ebfd5d216a35d953943b5a81dad7d808bb9f926b # v5.3.1
+        uses: super-linter/super-linter@35c3fa445cc217dfcc7b53eeb4e7aa95fcdd02fc # v5.6.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEFAULT_BRANCH: main
