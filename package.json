@@ -2,7 +2,7 @@
   "dependencies": {
     "@11ty/eleventy": "2.0.1",
     "@11ty/eleventy-navigation": "0.3.5",
-    "@x-govuk/govuk-eleventy-plugin": "5.0.6",
+    "@x-govuk/govuk-eleventy-plugin": "6.0.5",
     "build": "0.1.4",
     "nunjucks": "3.2.4"
   }
